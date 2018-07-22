@@ -1,7 +1,7 @@
 ---
 title: Welcoming
 createdDate: '2017-04-18'
-updatedDate: '2018-07-22'
+updatedDate: '2018-07-21'
 author: Brian Gebel
 tags:
   - starter
@@ -28,7 +28,4 @@ const toto = "tata";
 ```
 
 coucou `plop` comment tu vas ?
-
-
-
 
