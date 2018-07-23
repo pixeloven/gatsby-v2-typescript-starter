@@ -1,6 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { Grid, Card, Container, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
@@ -8,7 +8,10 @@ import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
 
+
 import PageBlogQuery from "./blog.graphql";
+
+export const pageQuery = PageBlogQuery;
 
 interface BlogProps {
     data: {

@@ -1,0 +1,89 @@
+query TemplateBlogPost($slug: String!) {
+    site: site {
+        siteMetadata {
+            disqus
+        }
+    }
+    post: markdownRemark(fields: {slug: {eq: $slug}}) {
+        html
+        excerpt
+        timeToRead
+        fields {
+            slug
+        }
+        frontmatter {
+            tags
+            author {
+                id
+                bio
+                twitter
+                avatar {
+                    children {
+                        ... on ImageSharp {
+                            fluid(maxWidth: 80, maxHeight: 80, quality: 100) {
+                                src
+                                srcSet
+                            }
+                        }
+                    }
+                }
+            }
+            title
+            updatedDate(formatString: "MMM D, YYYY")
+            image {
+                children {
+                    ... on ImageSharp {
+                        fluid(maxWidth: 900, maxHeight: 300, quality: 100) {
+                            src
+                            srcSet
+                        }
+                    }
+                }
+            }
+        }
+    }
+    recents: allMarkdownRemark(
+        filter: {
+            fields: {slug: {ne: $slug}}
+            frontmatter: {draft: {ne: true}},
+            fileAbsolutePath: {regex: "/blog/"},
+        },
+        sort: {order: DESC, fields: [frontmatter___updatedDate]},
+        limit: 4
+    ) {
+        edges {
+            node {
+                fields {
+                    slug
+                }
+                timeToRead
+                frontmatter {
+                    title
+                    image {
+                        children {
+                            ... on ImageSharp {
+                                fluid(maxWidth: 300, maxHeight: 100) {
+                                    src
+                                    srcSet
+                                }
+                            }
+                        }
+                    }
+                    author {
+                        id
+                        avatar {
+                            children {
+                                ... on ImageSharp {
+                                    fluid(maxWidth: 36, maxHeight: 36) {
+                                        src
+                                        srcSet
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

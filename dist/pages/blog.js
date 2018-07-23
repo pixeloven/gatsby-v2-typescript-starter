@@ -8,6 +8,8 @@ var BlogTitle_1 = require("../components/BlogTitle");
 var TagsCard_1 = require("../components/TagsCard/TagsCard");
 var BlogPagination_1 = require("../components/BlogPagination/BlogPagination");
 var lodash_1 = require("lodash");
+var blog_graphql_1 = require("./blog.graphql");
+exports.pageQuery = blog_graphql_1.default;
 // TODO should extend Component or PureComponent
 exports.Blog = function (props) {
     var tags = props.data.tags.group;
