@@ -89,6 +89,7 @@
     "@types/storybook__react": "^3.0.0",
     "@types/webpack-env": "^1.13.0",
     "babel-eslint": "^7.2.0",
+    "babel-plugin-import-graphql": "^2.6.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.19.0",

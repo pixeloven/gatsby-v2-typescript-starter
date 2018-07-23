@@ -9,6 +9,13 @@ const {kebabCase, uniq, get, compact, times} = require('lodash');
 const POSTS_PER_PAGE = 10;
 const cleanArray = arr => compact(uniq(arr));
 
+// Allows for external graphql files
+exports.onCreateBabelConfig = ({ babelrc }) => ({
+    ...babelrc,
+    plugins: babelrc.plugins.concat(['import-graphql']),
+})
+
+
 // // Add Gatsby's extract-graphql Babel plugin (we'll chain it with babel-loader)
 // const extractQueryPlugin = path.resolve(
 //   __dirname,
@@ -18,37 +25,29 @@ const cleanArray = arr => compact(uniq(arr));
 // Temporary workaround to ensure Gatsby builds minified, production build of React.
 // https://github.com/briangeb/gatsby-starter/issues/39#issuecomment-343647558
 exports.onCreateWebpackConfig = ({
-  stage,
-  loaders,
   actions
 }) => {
-  switch (stage) {
-    case `build-javascript`:
-      actions.setWebpackConfig({
+    actions.setWebpackConfig({
         module: {
-          rules: [
-            {
-              test: /\.tsx/,
-              use: [
-                // `babel-loader?${JSON.stringify({presets: ['babel-preset-env'], plugins: [extractQueryPlugin]})}`,
-                'ts-loader'
-              ]
-            }
-          ]
+            rules: [
+                {
+                    test: /\.tsx/,
+                    use: [
+                        'ts-loader'
+                    ]
+                },
+                {
+                    test: /\.(graphql|gql)$/,
+                    exclude: /node_modules/,
+                    use: [
+                        {
+                            loader: 'graphql-tag/loader'
+                        },
+                    ]
+                },
+            ]
         }
-      });
-  }
-  // TODO https://github.com/gatsbyjs/gatsby/issues/5520
-  //
-  // if (stage === 'build-javascript') {
-  //     config.loader('typescript', {
-  //         test: /\.tsx?$/,
-  //         loaders: [
-  //             `babel-loader?${JSON.stringify({presets: ['babel-preset-env'], plugins: [extractQueryPlugin]})}`,
-  //             'ts-loader'
-  //         ]
-  //     });
-  // }
+    });
 };
 
 // Create slugs for files.
