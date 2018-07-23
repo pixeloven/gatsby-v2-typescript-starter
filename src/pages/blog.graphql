@@ -1,4 +1,5 @@
-query PageBlog {
+
+query BlogQuery {
     # Get tags
     tags: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
         group(field: frontmatter___tags) {

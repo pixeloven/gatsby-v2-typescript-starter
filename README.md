@@ -10,3 +10,4 @@ Add to package.json once complete
 graphql.schema.json
 graphql.config.json
 ```
+// Follow this one https://github.com/atomicobject/ts-react-graphql-starter-kit

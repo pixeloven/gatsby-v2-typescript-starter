@@ -9,6 +9,10 @@
         "lib": ["esnext", "dom"],
         "jsx": "react",
     },
+    "types": [
+        "@types/node",
+        "@types/graphql"
+    ],
     "include": [
         "./src/**/*"
     ]

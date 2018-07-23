@@ -12,10 +12,14 @@ const cleanArray = arr => compact(uniq(arr));
 // Allows for external graphql files
 // TODO This isn't working for some reason
 // TODO Might also need Apollo client?
-// exports.onCreateBabelConfig = ({ babelrc }) => ({
-//     ...babelrc,
-//     plugins: babelrc.plugins.concat(['import-graphql']),
-// })
+// TODO Doesn't seem to do anything... might need to remove all this stuff
+exports.onCreateBabelConfig = (({
+  actions
+}) => {
+    actions.setBabelPlugin({
+        name: `babel-plugin-import-graphql`
+    });
+});
 
 
 // // Add Gatsby's extract-graphql Babel plugin (we'll chain it with babel-loader)
@@ -51,6 +55,7 @@ exports.onCreateWebpackConfig = ({
         }
     });
 };
+
 
 // Create slugs for files.
 // Slug will used for blog page path.
