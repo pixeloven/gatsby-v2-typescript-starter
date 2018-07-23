@@ -11,7 +11,7 @@ var lodash_1 = require("lodash");
 var blog_graphql_1 = require("./blog.graphql");
 exports.pageQuery = blog_graphql_1.default;
 // TODO should extend Component or PureComponent
-exports.Blog = function (props) {
+exports.default = (function (props) {
     var tags = props.data.tags.group;
     var posts = props.data.posts.edges;
     var pathname = props.location.pathname;
@@ -49,6 +49,5 @@ exports.Blog = function (props) {
                             React.createElement(BlogPagination_1.default, { Link: gatsby_1.Link, pathname: pathname, pageCount: pageCount }))),
                     React.createElement("div", null,
                         React.createElement(TagsCard_1.default, { Link: gatsby_1.Link, tags: tags, tag: props.pageContext.tag })))))));
-};
-exports.default = exports.Blog;
+});
 //# sourceMappingURL=blog.js.map

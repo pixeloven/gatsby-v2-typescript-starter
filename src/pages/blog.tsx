@@ -27,7 +27,7 @@ interface BlogProps {
 }
 
 // TODO should extend Component or PureComponent
-export const Blog = (props: BlogProps) => {
+export default (props: BlogProps) => {
     const tags = props.data.tags.group;
     const posts = props.data.posts.edges;
     const { pathname } = props.location;
@@ -105,5 +105,3 @@ export const Blog = (props: BlogProps) => {
         </Layout>
     );
 };
-
-export default Blog;
