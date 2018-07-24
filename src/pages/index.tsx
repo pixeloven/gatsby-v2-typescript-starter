@@ -11,7 +11,6 @@ import {
     Icon,
 } from "semantic-ui-react";
 
-
 interface IndexPageProps {
     location: {
         pathname: string;
@@ -26,7 +25,7 @@ export default (props: IndexPageProps) =>
                 Link={Link} pathname={props.location.pathname} items={menuItems} inverted
             />
             <Container text>
-                <Header inverted as="h1">Gatsby 1.0 - Starter kit</Header>
+                <Header inverted as="h1">Gatsby 2.0 - Starter kit</Header>
                 <Header inverted as="h2">Typescript - Jest - Semantic UI</Header>
                 <Button primary size="huge">Get started!</Button>
             </Container>
