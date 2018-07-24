@@ -19,7 +19,6 @@ const cleanArray = arr => compact(uniq(arr));
 // https://github.com/briangeb/gatsby-starter/issues/39#issuecomment-343647558
 exports.onCreateWebpackConfig = ({
   stage,
-  loaders,
   actions
 }) => {
   switch (stage) {
@@ -53,8 +52,8 @@ exports.onCreateWebpackConfig = ({
 
 // Create slugs for files.
 // Slug will used for blog page path.
-exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
-  const {createNodeField} = boundActionCreators;
+exports.onCreateNode = ({node, actions, getNode}) => {
+  const {createNodeField} = actions;
   let slug;
   switch (node.internal.type) {
     case `MarkdownRemark`:
@@ -68,12 +67,13 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   }
 };
 
+// TODO remove query in blog.tsx might need to be above ^
 // Implement the Gatsby API `createPages`.
 // This is called after the Gatsby bootstrap is finished
 // so you have access to any information necessary to
 // programatically create pages.
-exports.createPages = ({graphql, boundActionCreators}) => {
-  const {createPage} = boundActionCreators;
+exports.createPages = ({graphql, actions}) => {
+  const {createPage} = actions;
 
   return new Promise((resolve, reject) => {
     const templates = ['blogPost', 'tagsPage', 'blogPage']
@@ -84,21 +84,21 @@ exports.createPages = ({graphql, boundActionCreators}) => {
 
     graphql(
       `
-      {
-        posts: allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                tags
+            {
+              posts: allMarkdownRemark {
+                edges {
+                  node {
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      tags
+                    }
+                  }
+                }
               }
             }
-          }
-        }
-      }
-    `
+          `
     ).then(result => {
       if (result.errors) {
         return reject(result.errors);
