@@ -5,6 +5,7 @@
   "author": "briangeb <briangeb@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf ./dist && rm -rf ./public",
     "start": "gatsby develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
