@@ -1,9 +1,10 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import { Link, graphql } from "gatsby";
-import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
+import { Grid, Card, Container, Segment, Comment } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
+import PreviewPostCard from "../components/PreviewPostCard/PreviewPostCard";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
 import { get } from "lodash";
@@ -34,41 +35,21 @@ export default (props: BlogProps) => {
                 const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
                 const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
                 const cover = get(frontmatter, "image.children.0.fluid", {});
-
-                const extra = (
-                    <Comment.Group>
-                        <Comment>
-                            <Comment.Avatar
-                                src={avatar.fluid.src}
-                                srcSet={avatar.fluid.srcSet}
-                            />
-                            <Comment.Content>
-                                <Comment.Author style={{ fontWeight: 400 }}>
-                                    {frontmatter.author.id}
-                                </Comment.Author>
-                                <Comment.Metadata style={{ margin: 0 }}>
-                                    {frontmatter.updatedDate} - {timeToRead} min read
-                                </Comment.Metadata>
-                            </Comment.Content>
-                        </Comment>
-                    </Comment.Group>
-                );
-
-                const description = (
-                    <Card.Description>
-                        {excerpt}
-                        <br />
-                        <Link to={slug}>Read more…</Link>
-                    </Card.Description>
-                );
-
+                const {title, author, updatedDate} = frontmatter;
                 return (
-                    <Card key={slug}
-                          fluid
-                          image={cover}
-                          header={frontmatter.title}
-                          extra={extra}
-                          description={description}
+                    <PreviewPostCard
+                        avatar={avatar}
+                        cover={cover}
+                        title={title}
+                        author={author}
+                        meta={{
+                            updatedDate,
+                            timeToRead,
+                        }}
+                        post={{
+                            excerpt,
+                            slug,
+                        }}
                     />
                 );
             })}
@@ -99,6 +80,8 @@ export default (props: BlogProps) => {
         </Layout>
     );
 };
+
+// TODO why is this being used when we have it in the blog-page as well.
 
 export const pageQuery = graphql`
     query PageBlog {
