@@ -24,7 +24,7 @@
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "dependencies": {
-    "@storybook/addons": "^3.3.0",
+    "@babel/core": "^7.0.0-beta.54",
     "@types/lodash": "^4.14.0",
     "@types/react": "^16.4.0",
     "@types/react-dom": "^16.0.0",
@@ -32,7 +32,6 @@
     "@types/react-redux": "^6.0.0",
     "@types/react-router": "^4.0.0",
     "@types/react-router-dom": "^4.2.0",
-    "babel-core": "^7.0.0-beta.3",
     "change-case": "^3.0.0",
     "codeclimate-test-reporter": "^0.5.0",
     "disqus-react": "^1.0.5",
@@ -77,6 +76,7 @@
     "@storybook/addon-knobs": "^3.4.0",
     "@storybook/addon-notes": "^3.4.0",
     "@storybook/addon-options": "^3.4.0",
+    "@storybook/addons": "^3.4.0",
     "@storybook/react": "^3.4.0",
     "@types/enzyme": "^3.1.0",
     "@types/jest": "^23.3.0",
