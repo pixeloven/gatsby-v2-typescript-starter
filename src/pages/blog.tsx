@@ -31,8 +31,8 @@ export default class Blog extends React.Component<BlogProps> {
         const postsQuery = props.data.posts.edges; // Need to have null state
         const { pathname } = props.location;
         const pageCount = Math.ceil(props.data.posts.totalCount / 10);
-        
-        const posts: Posts = postsQuery.map(createPostList)
+
+        const posts: Posts = postsQuery.map(createPostList);
         return (
             <Layout location={props.location}>
                 <Container>

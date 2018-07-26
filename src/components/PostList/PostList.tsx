@@ -4,7 +4,7 @@ import { Post, Posts } from "../../react-types";
 import PostCard from "../PostCard/PostCard";
 
 interface PostListProps extends React.HTMLProps<HTMLDivElement>  {
-    posts: Posts,
+    posts: Posts;
 }
 
 export default class PostList extends React.PureComponent<PostListProps> {

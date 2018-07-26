@@ -9,7 +9,7 @@ import { get } from "lodash";
  * @param {{node: MarkdownRemark}} postQuery
  * @returns {Post}
  */
-export const createPostList = function(postQuery: {node: MarkdownRemark}) : Post {
+export function createPostList(postQuery: {node: MarkdownRemark}) : Post {
     const {frontmatter, timeToRead, fields: {slug}, excerpt} = postQuery.node;
     const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
     const cover = get(frontmatter, "image.children.0.fluid", {});
@@ -23,7 +23,7 @@ export const createPostList = function(postQuery: {node: MarkdownRemark}) : Post
         slug,
         meta: {
             updatedDate,
-            timeToRead
-        }
-    }
+            timeToRead,
+        },
+    };
 };

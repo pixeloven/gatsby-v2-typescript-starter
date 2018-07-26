@@ -4,7 +4,7 @@ import { Card, Comment } from "semantic-ui-react";
 import { Post } from "../../react-types";
 
 export interface PostCardProps extends React.HTMLProps<HTMLDivElement> {
-    post: Post
+    post: Post;
 }
 
 export default class PostCard extends React.PureComponent<PostCardProps> {

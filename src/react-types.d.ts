@@ -1,5 +1,5 @@
 import {
-    ImageSharp
+    ImageSharp,
 } from "./graphql-types";
 
 export type Post = {
@@ -17,4 +17,4 @@ export type Post = {
     };
 };
 
-export type Posts = Array<Post>;
+export type Posts = Post[];
