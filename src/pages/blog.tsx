@@ -1,13 +1,15 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import { Link, graphql } from "gatsby";
-import { Grid, Card, Container, Segment, Comment } from "semantic-ui-react";
-import { MarkdownRemarkConnection, ImageSharp } from "../graphql-types";
+import { Grid, Container, Segment } from "semantic-ui-react";
+import {MarkdownRemarkConnection, ImageSharp, MarkdownRemark} from "../graphql-types";
+import { Post, Posts } from "../react-types";
 import BlogTitle from "../components/BlogTitle";
-import PreviewPostCard from "../components/PreviewPostCard/PreviewPostCard";
+import PostList from "../components/PostList/PostList";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
-import { get } from "lodash";
+import {createPostList} from "../functions";
+
 
 interface BlogProps {
     data: {
@@ -22,63 +24,39 @@ interface BlogProps {
     };
 }
 
-export default (props: BlogProps) => {
-    const tags = props.data.tags.group;
-    const posts = props.data.posts.edges;
-    const { pathname } = props.location;
-    const pageCount = Math.ceil(props.data.posts.totalCount / 10);
+export default class Blog extends React.Component<BlogProps> {
+    render() {
+        const props = this.props;
+        const tags = props.data.tags.group; // Check Component types
+        const postsQuery = props.data.posts.edges; // Need to have null state
+        const { pathname } = props.location;
+        const pageCount = Math.ceil(props.data.posts.totalCount / 10);
+        
+        const posts: Posts = postsQuery.map(createPostList)
+        return (
+            <Layout location={props.location}>
+                <Container>
+                    {/* Title */}
+                    <BlogTitle />
 
-    // TODO export posts in a proper component
-    const Posts = (
-        <Container>
-            {posts.map(({ node }) => {
-                const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
-                const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
-                const cover = get(frontmatter, "image.children.0.fluid", {});
-                const {title, author, updatedDate} = frontmatter;
-                return (
-                    <PreviewPostCard
-                        avatar={avatar}
-                        cover={cover}
-                        title={title}
-                        author={author}
-                        meta={{
-                            updatedDate,
-                            timeToRead,
-                        }}
-                        post={{
-                            excerpt,
-                            slug,
-                        }}
-                    />
-                );
-            })}
-        </Container>
-    );
-
-    return (
-        <Layout location={props.location}>
-            <Container>
-                {/* Title */}
-                <BlogTitle />
-
-                {/* Content */}
-                <Segment vertical>
-                    <Grid padded style={{ justifyContent: "space-around" }}>
-                        <div style={{ maxWidth: 600 }}>
-                            {Posts}
-                            <Segment vertical textAlign="center">
-                                <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
-                            </Segment>
-                        </div>
-                        <div>
-                            <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
-                        </div>
-                    </Grid>
-                </Segment>
-            </Container>
-        </Layout>
-    );
+                    {/* Content */}
+                    <Segment vertical>
+                        <Grid padded style={{ justifyContent: "space-around" }}>
+                            <div style={{ maxWidth: 600 }}>
+                                <PostList posts={posts} />
+                                <Segment vertical textAlign="center">
+                                    <BlogPagination Link={Link} pathname={pathname} pageCount={pageCount} />
+                                </Segment>
+                            </div>
+                            <div>
+                                <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
+                            </div>
+                        </Grid>
+                    </Segment>
+                </Container>
+            </Layout>
+        );
+    }
 };
 
 // TODO why is this being used when we have it in the blog-page as well.
