@@ -25,7 +25,6 @@
     "codeclimate": "codeclimate-test-reporter < coverage/lcov.info"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.54",
     "@types/lodash": "^4.14.0",
     "@types/react": "^16.4.0",
     "@types/react-dom": "^16.0.0",
@@ -73,6 +72,8 @@
     "typescript": "2.9.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/runtime": "^7.0.0-beta.54",
     "@storybook/addon-actions": "^4.0.0-alpha.14",
     "@storybook/addon-knobs": "^4.0.0-alpha.14",
     "@storybook/addon-notes": "^4.0.0-alpha.14",
@@ -90,6 +91,7 @@
     "@types/storybook__react": "^3.0.0",
     "@types/webpack-env": "^1.13.0",
     "babel-eslint": "^7.2.0",
+    "emotion": "^9.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.19.0",
@@ -104,6 +106,7 @@
     "jest": "^23.4.0",
     "lint-staged": "^7.2.0",
     "mkdirp": "^0.5.0",
+    "moment": "^2.16.0",
     "plop": "^2.0.0",
     "raw-loader": "^0.5.0",
     "react-test-renderer": "^16.4.0",
