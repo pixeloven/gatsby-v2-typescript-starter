@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout, { menuItems } from "../components/layout";
 import { Link } from "gatsby";
-import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
+import HeaderMenu from "../components/organisms/HeaderMenu/HeaderMenu";
 import {
     Button,
     Segment,

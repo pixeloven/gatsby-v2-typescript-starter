@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var layout_1 = require("../components/layout");
 var gatsby_1 = require("gatsby");
-var HeaderMenu_1 = require("../components/HeaderMenu/HeaderMenu");
+var HeaderMenu_1 = require("../components/organisms/HeaderMenu/HeaderMenu");
 var semantic_ui_react_1 = require("semantic-ui-react");
 exports.default = (function (props) {
     return React.createElement(layout_1.default, { location: props.location },

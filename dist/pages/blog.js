@@ -18,10 +18,10 @@ var React = require("react");
 var layout_1 = require("../components/layout");
 var gatsby_1 = require("gatsby");
 var semantic_ui_react_1 = require("semantic-ui-react");
-var BlogTitle_1 = require("../components/BlogTitle");
-var PostList_1 = require("../components/PostList/PostList");
-var TagsCard_1 = require("../components/TagsCard/TagsCard");
-var BlogPagination_1 = require("../components/BlogPagination/BlogPagination");
+var BlogTitle_1 = require("../components/molecules/BlogTitle/BlogTitle");
+var PostList_1 = require("../components/molecules/PostList/PostList");
+var TagsCard_1 = require("../components/molecules/TagsCard/TagsCard");
+var BlogPagination_1 = require("../components/molecules/BlogPagination/BlogPagination");
 var functions_1 = require("../functions");
 var Blog = /** @class */ (function (_super) {
     __extends(Blog, _super);

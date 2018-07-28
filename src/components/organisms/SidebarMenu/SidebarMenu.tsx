@@ -2,9 +2,9 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { GatsbyLinkProps } from "gatsby";
-import { StoreState } from "../../store";
-import { MenuProps, MenuItem } from "../Menu";
-import { Menu, Icon, Sidebar } from "semantic-ui-react";
+import { StoreState } from "../../../store";
+import { MenuProps, MenuItem } from "../../Menu";
+import { Menu, Sidebar } from "semantic-ui-react";
 
 interface SidebarMenuProps extends MenuProps {
     visible?: boolean;

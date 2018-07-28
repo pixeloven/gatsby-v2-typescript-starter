@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Container } from "semantic-ui-react";
-import { Post, Posts } from "../../react-types";
+import { Post, Posts } from "../../../react-types";
 import PostCard from "../PostCard/PostCard";
 
 interface PostListProps extends React.HTMLProps<HTMLDivElement>  {

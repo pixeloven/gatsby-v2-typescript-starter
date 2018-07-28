@@ -4,10 +4,10 @@ import { Link, graphql } from "gatsby";
 import { Grid, Container, Segment } from "semantic-ui-react";
 import { MarkdownRemarkConnection } from "../graphql-types";
 import { Posts } from "../react-types";
-import BlogTitle from "../components/BlogTitle";
-import PostList from "../components/PostList/PostList";
-import TagsCard from "../components/TagsCard/TagsCard";
-import BlogPagination from "../components/BlogPagination/BlogPagination";
+import BlogTitle from "../components/molecules/BlogTitle/BlogTitle";
+import PostList from "../components/molecules/PostList/PostList";
+import TagsCard from "../components/molecules/TagsCard/TagsCard";
+import BlogPagination from "../components/molecules/BlogPagination/BlogPagination";
 import {createPostList} from "../functions";
 
 

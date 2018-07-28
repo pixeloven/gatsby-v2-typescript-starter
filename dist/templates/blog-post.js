@@ -16,7 +16,7 @@ var React = require("react");
 var gatsby_1 = require("gatsby");
 var lodash_1 = require("lodash");
 var semantic_ui_react_1 = require("semantic-ui-react");
-var BlogTitle_1 = require("../components/BlogTitle");
+var BlogTitle_1 = require("../components/molecules/BlogTitle/BlogTitle");
 exports.default = (function (props) {
     var _a = props.data.post, frontmatter = _a.frontmatter, html = _a.html, timeToRead = _a.timeToRead;
     var avatar = frontmatter.author.avatar.children[0];

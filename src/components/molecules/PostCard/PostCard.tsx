@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { Card, Comment } from "semantic-ui-react";
-import { Post } from "../../react-types";
+import { Post } from "../../../react-types";
 
 export interface PostCardProps extends React.HTMLProps<HTMLDivElement> {
     post: Post;

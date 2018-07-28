@@ -12,8 +12,8 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var gatsby_1 = require("gatsby");
-var HeaderMenu_1 = require("../components/HeaderMenu/HeaderMenu");
-var SidebarMenu_1 = require("../components/SidebarMenu/SidebarMenu");
+var HeaderMenu_1 = require("../components/organisms/HeaderMenu/HeaderMenu");
+var SidebarMenu_1 = require("../components/organisms/SidebarMenu/SidebarMenu");
 var semantic_ui_react_1 = require("semantic-ui-react");
 require("../css/styles.css");
 require("../css/responsive.css");

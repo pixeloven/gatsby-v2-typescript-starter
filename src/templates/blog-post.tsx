@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 import { get } from "lodash";
-import { Header, Container, Segment, Icon, Label, Button, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
+import { Header, Container, Segment, Label, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
 import { MarkdownRemark, ImageSharp, MarkdownRemarkConnection, Site } from "../graphql-types";
-import BlogTitle from "../components/BlogTitle";
+import BlogTitle from "../components/molecules/BlogTitle/BlogTitle";
 import { DiscussionEmbed } from "disqus-react"; // TODO Broken or do I want?
 
 interface BlogPostProps {

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
-import SidebarMenu from "../components/SidebarMenu/SidebarMenu";
+import HeaderMenu from "../components/organisms/HeaderMenu/HeaderMenu";
+import SidebarMenu from "../components/organisms/SidebarMenu/SidebarMenu";
 import { Segment, Icon, Container, Sidebar } from "semantic-ui-react";
 import "../css/styles.css";
 import "../css/responsive.css";
