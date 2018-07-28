@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
 import SidebarMenu from "../components/SidebarMenu/SidebarMenu";
-import { Segment, Icon, Container, Sidebar, Button } from "semantic-ui-react";
+import { Segment, Icon, Container, Sidebar } from "semantic-ui-react";
 import "../css/styles.css";
 import "../css/responsive.css";
 import "../css/semantic.min.css";
@@ -50,7 +50,7 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
                         {/* Footer */}
                         <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
                             <Container textAlign="center">
-                                <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
+                                <p>Powered with <Icon name="heart" /> by Gatsby 2.0</p>
                             </Container>
                         </Segment>
                     </Sidebar.Pusher>

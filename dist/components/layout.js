@@ -45,7 +45,7 @@ var DefaultLayout = /** @class */ (function (_super) {
                             React.createElement("p", null,
                                 "Powered with ",
                                 React.createElement(semantic_ui_react_1.Icon, { name: "heart" }),
-                                " by Gatsby 1.0")))))));
+                                " by Gatsby 2.0")))))));
     };
     return DefaultLayout;
 }(React.PureComponent));
