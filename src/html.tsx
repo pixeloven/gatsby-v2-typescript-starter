@@ -12,6 +12,8 @@ interface HtmlProps {
 // TODO https://github.com/gatsbyjs/gatsby-starter-blog model starter after that but also make it more modern with semantic design
 // TODO react-helmet was used here but not sure it is needed anymore
 // TODO also might not need this file anymore since this is just a copy of gatsby's
+// TODO add       "indent": ["error", 4]
+// TODO set react version for xo
 export default class HTML extends React.Component<HtmlProps> {
     render() {
         return (

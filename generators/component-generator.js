@@ -5,7 +5,8 @@ const {inputRequired, addWithCustomData} = require('./utils');
 const MAX_PROPS = 10;
 
 const propsPrompts = [];
-[...Array(MAX_PROPS)].forEach((v, i) => {
+const propsArray = new Array(MAX_PROPS);
+[...propsArray].forEach((v, i) => {
   propsPrompts.push(
     {
       type: 'confirm',

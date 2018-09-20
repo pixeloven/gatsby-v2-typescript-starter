@@ -11,8 +11,8 @@
     "build": "gatsby build",
     "lint": "yarn lint:ts && yarn lint:md && yarn lint:js && yarn lint:css",
     "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
-    "lint:md": "remark .",
-    "lint:js": "xo",
+    "lint:md": "remark \"data/**/*.md\"",
+    "lint:js": "xo --ignore gatsby-config.js",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:scss": "stylelint src/**/*.scss --syntax scss",
     "test": "yarn lint && jest",
@@ -175,7 +175,8 @@
     "space": true,
     "rules": {
       "no-case-declarations": 0,
-      "default-case": 0
+      "default-case": 0,
+      "prefer-destructuring": 0
     }
   },
   "remarkConfig": {
