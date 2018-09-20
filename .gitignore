@@ -144,5 +144,8 @@ $RECYCLE.BIN/
 ### Gatsby ###
 public
 .cache
-__snapshots__
 .snap
+
+### Jest ###
+__snapshots__
+
