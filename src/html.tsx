@@ -8,6 +8,8 @@ interface HtmlProps {
     body: string;
     postBodyComponents: any; // Array
 }
+
+// TODO https://github.com/gatsbyjs/gatsby-starter-blog model starter after that but also make it more modern with semantic design
 // TODO react-helmet was used here but not sure it is needed anymore
 // TODO also might not need this file anymore since this is just a copy of gatsby's
 export default class HTML extends React.Component<HtmlProps> {
