@@ -9,6 +9,7 @@ interface HtmlProps {
     postBodyComponents: any; // Array
 }
 
+// TODO remove .json for graphql
 // TODO create a publish cmd that can out commit? And perhaps one that can commit to specific branch for github support
 // TODO re-generate  graphql types?
 // TODO need to document what the expect image size for blog posts is
@@ -28,24 +29,24 @@ export default class HTML extends React.Component<HtmlProps> {
     render() {
         return (
             <html {...this.props.htmlAttributes}>
-                <head>
-                    <meta charSet="utf-8" />
-                    <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-                    <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-                    />
-                    {this.props.headComponents}
-                </head>
-                <body {...this.props.bodyAttributes}>
-                {this.props.preBodyComponents}
-                <div
-                    key={`body`}
-                    id="___gatsby"
-                    dangerouslySetInnerHTML={{ __html: this.props.body }}
+            <head>
+                <meta charSet="utf-8" />
+                <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, shrink-to-fit=no"
                 />
-                {this.props.postBodyComponents}
-                </body>
+                {this.props.headComponents}
+            </head>
+            <body {...this.props.bodyAttributes}>
+            {this.props.preBodyComponents}
+            <div
+                key={`body`}
+                id="___gatsby"
+                dangerouslySetInnerHTML={{ __html: this.props.body }}
+            />
+            {this.props.postBodyComponents}
+            </body>
             </html>
         );
     }

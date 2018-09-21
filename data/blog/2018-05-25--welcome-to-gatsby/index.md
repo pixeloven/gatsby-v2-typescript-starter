@@ -6,7 +6,7 @@ author: Brian Gebel
 tags:
   - gatsby
   - starter
-image: cup-of-coffee-laptop-office-macbook-89786.jpeg
+image: cup-of-coffee-laptop-office-macbook-97908.jpeg
 draft: false
 ---
 
