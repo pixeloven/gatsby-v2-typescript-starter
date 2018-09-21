@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter",
+  "name": "gatsby-typescript-starter",
   "version": "1.0.0",
-  "description": "Gatsby 1.0 starter",
-  "author": "briangeb <briangeb@gmail.com>",
+  "description": "Gatsby 2.0 Typescript Starter",
+  "author": "Brian Gebel <me@pixeloven.com>",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf ./dist && rm -rf ./public && rm -rf ./.cache",
@@ -122,9 +122,14 @@
     "webpack": "^4.19.0",
     "xo": "^0.21.0"
   },
+  "devEngines": {
+    "node": "8.x || 9.x || 10.x"
+  },
   "keywords": [
     "gatsby",
-    "starter"
+    "semantic",
+    "starter",
+    "typescript"
   ],
   "jest": {
     "globals": {
@@ -163,7 +168,7 @@
     ],
     "*.md": [
       "node tools/update-post-date.js",
-      "remark ./data/*.md -o",
+      "remark -o",
       "git add"
     ],
     "*.css": [
