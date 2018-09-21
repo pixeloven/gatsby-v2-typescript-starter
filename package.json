@@ -12,7 +12,7 @@
     "lint": "yarn lint:ts && yarn lint:md && yarn lint:js && yarn lint:css",
     "lint:ts": "tslint \"./src/**/*.ts\" \"./src/**/*.tsx\"",
     "lint:md": "remark \"data/**/*.md\"",
-    "lint:js": "xo --ignore gatsby-config.js",
+    "lint:js": "xo",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:scss": "stylelint src/**/*.scss --syntax scss",
     "test": "jest",

@@ -1,3 +1,4 @@
 # Ignore distribution and build files
 .cache/*
 dist/*
+gatsby-config.js
