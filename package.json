@@ -4,6 +4,11 @@
   "description": "Gatsby 2.0 Typescript Starter",
   "author": "Brian Gebel <me@pixeloven.com>",
   "license": "MIT",
+  "homepage": "https://github.com/pixeloven/gatsby-v2-typescript-starter/blob/master/README.md",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/pixeloven/gatsby-v2-typescript-starter.git"
+  },
   "scripts": {
     "clean": "rm -rf ./dist && rm -rf ./public && rm -rf ./.cache",
     "start": "gatsby develop",
