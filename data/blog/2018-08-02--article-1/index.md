@@ -1,7 +1,7 @@
 ---
 title: 'Article #1'
 createdDate: '2018-08-02'
-updatedDate: '2018-09-21'
+updatedDate: '2018-11-20'
 author: Brian Gebel
 tags:
   - test
@@ -13,8 +13,9 @@ My awesome article
 
 ## TODO
 
--   [x] Replace image
--   [ ] Write an awesome article
+- [x] Replace image
+- [ ] Write an awesome article
+
 
 
 

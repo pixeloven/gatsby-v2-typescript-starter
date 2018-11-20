@@ -1,7 +1,7 @@
 ---
 title: Welcome to Gatsby
 createdDate: '2018-05-25'
-updatedDate: '2018-09-21'
+updatedDate: '2018-11-20'
 author: Brian Gebel
 tags:
   - gatsby
@@ -32,13 +32,4 @@ Try editing the javascript pages in src/pages. Saved changes will live reload in
 5. `gatsby serve` — Gatsby starts a local HTML server for testing your built site.
 
 To see detailed documentation for the CLI commands, run in the terminal gatsby --help and for specific commands gatsby COMMAND_NAME --help e.g. gatsby develop --help.
-
-
-
-
-
-
-
-
-
 

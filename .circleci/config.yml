@@ -29,10 +29,6 @@ jobs:
         key: v2-dependencies-{{ checksum "package.json" }}
 
     - run:
-        name: Lint source
-        command: yarn lint
-
-    - run:
         name: Test source
         command: yarn test
 

@@ -13,5 +13,5 @@ My awesome article
 
 ## TODO
 
--   [x] Replace image
--   [ ] Write an awesome article
+- [x] Replace image
+- [ ] Write an awesome article
