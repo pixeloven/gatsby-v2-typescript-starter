@@ -1,8 +1,8 @@
 # Gatsby 2.0 Typescript Starter
-Gatsby is a documented as a static site generator for react. However, the truth is that it is far more than that. With the help of GraphQL and an extensive library of extensions Gatsby can create dynamic content that is both fast and highly extensible. See their documentation found [here](https://www.gatsbyjs.org/docs/) for a more through explanation.
+[Gatsby](https://www.gatsbyjs.org/) is documented as a static site generator for react. However, the truth is that it's far more than that. With the help of GraphQL and a vast library of plugins Gatsby can be used to create rich dynamic content that is both fast and highly extensible.
 
 #### Overview
-The goal of this starter like many others is to provide the ground work for new Gatsby projects. The primary focus for this particular starter is provide a feature rich environment that allows a user to hit the ground running while providing tools to help maintain a quality site and code base. 
+The goal of this starter, like many others, is to provide the ground work for new Gatsby projects. The primary focus for this particular starter is provide a feature rich environment that allows a user to hit the ground running while providing tools to help maintain quality code and site. 
 
 #### Features
 * Markdown to markup processing by remark
@@ -22,7 +22,7 @@ This starter supporters multiple authors at the same time. All authors must firs
 data/
 ├── author.json
 ```
-Each Author should share a structure identical to the following.
+Each author should share a structure identical to the following.
 ```json
   {
     "id": "Full Name",
@@ -122,4 +122,3 @@ Once complete you can launch this container by running.
 docker-compose up
 ``` 
 This will then serve up the site at [http://localhost:8080](http://localhost:8080).
-

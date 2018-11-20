@@ -143,6 +143,7 @@ $RECYCLE.BIN/
 
 ### Gatsby ###
 public
+dist
 .cache
 .snap
 

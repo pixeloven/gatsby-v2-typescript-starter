@@ -10,8 +10,9 @@
     "url" : "https://github.com/pixeloven/gatsby-v2-typescript-starter.git"
   },
   "scripts": {
-    "clean": "rm -rf ./dist && rm -rf ./public && rm -rf ./.cache",
+    "prebuild": "rm -rf ./dist && rm -rf ./public && rm -rf ./.cache",
     "start": "gatsby develop",
+    "serve": "gatsby serve",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "lint": "yarn lint:ts && yarn lint:md && yarn lint:js && yarn lint:css",
