@@ -138,15 +138,20 @@
     "typescript"
   ],
   "jest": {
+    "preset": "ts-jest",
     "globals": {
       "__LINK_PREFIX__": "",
       "__PREFIX_LINKS__": ""
     },
     "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.(ts|tsx)$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testMatch": [
+      "<rootDir>/test/**/?(*.)(spec|test).(j|t)s?(x)",
+      "<rootDir>/src/**/?(*.)(spec|test).(j|t)s?(x)"
+    ],
     "testPathIgnorePatterns": [
+      "/node_modules/",
       "/node_modules/",
       "/templates/",
       "/.cache"
@@ -154,7 +159,8 @@
     "moduleFileExtensions": [
       "ts",
       "tsx",
-      "js"
+      "js",
+      "jsx"
     ],
     "collectCoverage": true,
     "coverageReporters": [

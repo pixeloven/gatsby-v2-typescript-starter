@@ -65,17 +65,16 @@ describe("HeaderMenu component", () => {
         expect(wrapper.find({ inverted: true }).length).toBe(1);
     });
 
-    it("should dispatch the correct message on burger click", () => {
-        const dispatchMock: any = jest.fn();
-        const wrapper = shallow(
-            <HeaderMenu
-                Link={LinkStub}
-                items={items}
-                pathname=""
-                dispatch={dispatchMock} />,
-        );
-        wrapper.find(".mobile .only").simulate("click");
-        expect(dispatchMock.mock.calls.length).toBe(1);
-    });
-
+    // it("should dispatch the correct message on burger click", () => {
+    //     const dispatchMock: any = jest.fn();
+    //     const wrapper = shallow(
+    //         <HeaderMenu
+    //             Link={LinkStub}
+    //             items={items}
+    //             pathname=""
+    //             dispatch={dispatchMock} />,
+    //     );
+    //     wrapper.find(".mobile .only").simulate("click");
+    //     expect(dispatchMock.mock.calls.length).toBe(1);
+    // });
 });
