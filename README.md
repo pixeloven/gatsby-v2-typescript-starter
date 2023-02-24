@@ -1,8 +1,6 @@
 # Gatsby 2.0 Typescript Starter
 [Gatsby](https://www.gatsbyjs.org/) is documented as a static site generator for react. However, the truth is that it's far more than that. With the help of GraphQL and a vast library of plugins Gatsby can be used to create rich dynamic content that is both fast and highly extensible.
 
-[![CircleCI](https://circleci.com/gh/pixeloven/gatsby-v2-typescript-starter.svg?style=svg)](https://circleci.com/gh/pixeloven/gatsby-v2-typescript-starter)
-
 #### Overview
 The goal of this starter, like many others, is to provide the ground work for new Gatsby projects. The primary focus for this particular starter is provide a feature rich environment that allows a user to hit the ground running while providing tools to help maintain quality code and site. 
 
